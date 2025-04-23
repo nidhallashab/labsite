@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin - Laboratory</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .file-input {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-light">
+  <div class="container py-4">
+    <h1 class="mb-4 text-center">Admin Dashboard</h1>
+
+    <!-- Patients Table -->
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header bg-primary text-white">
+        <i class="bi bi-people-fill me-2"></i>Registered Patients
+      </div>
+      <div class="card-body table-responsive">
+        <table class="table table-striped align-middle">
+          <thead class="table-primary">
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Registration Date</th>
+              <th>Premium Status</th>
+              <th>Send an Image</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Jean Dupont</td>
+              <td>jean.dupont@example.com</td>
+              <td>04/01/2025</td>
+              <td><span class="badge bg-success">Yes</span></td>
+              <td>
+                <form enctype="multipart/form-data">
+                  <input type="file" class="file-input" id="fileJean" name="imageJean" accept="image/*">
+                  <label for="fileJean" class="btn btn-sm btn-outline-primary" title="Choose an image"> Choose</label>
+                  <button type="submit" class="btn btn-sm btn-success mt-1" title="Send the image"> Send</button>
+                </form>
+              </td>
+             
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Claire Martin</td>
+                <td>claire.martin@example.com</td>
+                <td>05/04/2025</td>
+                <td><span class="badge bg-danger">No</span></td> 
+                <td>
+                  <form enctype="multipart/form-data">
+                    <input type="file" class="file-input" id="fileClaire" name="imageClaire" accept="image/*">
+                    <label for="fileClaire" class="btn btn-sm btn-outline-primary">Choose</label>
+                    <button type="submit" class="btn btn-sm btn-success mt-1">Send</button>
+                  </form>
+                </td>
+            </tr>
+            <!-- Add more patients here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Message Reply Section -->
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header bg-success text-white">
+        <i class="bi bi-chat-dots-fill me-2"></i>Reply to Patient Messages
+      </div>
+      <div class="card-body">
+        <form>
+          <div class="mb-3">
+            <label for="patientMessage" class="form-label">Patient's Message</label>
+            <textarea id="patientMessage" class="form-control" rows="3" readonly>Hello, I have a question about my results...</textarea>
+          </div>
+          <div class="mb-3">
+            <label for="adminResponse" class="form-label">Your Response</label>
+            <textarea id="adminResponse" class="form-control" rows="3" placeholder="Write your response here..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-success">✉️ Send Response</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Appointment Requests -->
+    <div class="card shadow-sm">
+      <div class="card-header bg-warning text-dark">
+        <i class="bi bi-calendar-check-fill me-2"></i>Appointment Requests
+      </div>
+      <div class="card-body">
+        <ul class="list-group">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <span>
+              <strong>Marie Curie</strong> - 04/10/2025 at 2:00 PM
+            </span>
+            <div>
+              <button class="btn btn-sm btn-outline-success me-2" title="Accept the appointment">✔️ Accept</button>
+              <button class="btn btn-sm btn-outline-danger" title="Decline the appointment">❌ Refuse</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional: Bootstrap Icons -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.js"></script>
+</body>
+</html>
